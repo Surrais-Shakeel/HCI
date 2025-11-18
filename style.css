@@ -1,0 +1,271 @@
+/* --- Global & Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+:root {
+    --bg-color: #1a1a2e; /* Deep, dark navy */
+    --card-color: #1f1f3a; /* Slightly lighter navy */
+    --accent-color: #00e5ff; /* Bright "holographic" blue */
+    --text-color: #f0f0f0; /* Off-white */
+    --subtle-text: #a0a0c0; /* Muted light blue/purple */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* --- Kiosk Container --- */
+.kiosk-container {
+    width: 100%;
+    max-width: 1000px; /* Typical kiosk screen width */
+    height: 90vh;
+    max-height: 700px; /* Typical kiosk screen height */
+    background: var(--card-color);
+    border-radius: 20px;
+    box-shadow: 0 0 60px var(--accent-color, 0.2);
+    border: 2px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* --- Header --- */
+header {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+header .time {
+    font-size: 1rem;
+    color: var(--subtle-text);
+}
+
+/* --- Main Content --- */
+main {
+    flex-grow: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.welcome-title strong {
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+/* --- Navigation Cards --- */
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    flex-grow: 1;
+}
+
+.nav-card {
+    background: linear-gradient(145deg, #2a2a4e, #1f1f3a);
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px var(--accent-color);
+}
+
+.nav-card .icon {
+    font-size: 3rem; /* You would replace this with actual icons */
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.nav-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.nav-card p {
+    font-size: 0.9rem;
+    color: var(--subtle-text);
+}
+
+/* --- Search Bar (Futuristic Element) --- */
+.search-bar {
+    margin-top: 30px;
+    display: flex;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border: 1px solid var(--subtle-text);
+    background: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 10px 0 0 10px;
+    outline: none;
+}
+
+.search-bar input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.search-bar button {
+    padding: 15px 20px;
+    border: none;
+    background: var(--accent-color);
+    color: var(--bg-color);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 0 10px 10px 0;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background: #fff;
+}
+
+/* === NEW STYLES FOR SUB-PAGES (Add to bottom) === */
+
+/* --- Back Button --- */
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--accent-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #fff;
+}
+
+/* --- Page Title --- */
+.page-title {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--subtle-text);
+    padding-bottom: 15px;
+}
+
+/* --- Content Wrapper (for scrolling) --- */
+.page-content {
+    flex-grow: 1;
+    overflow-y: auto; /* Lets the content scroll if it's too long */
+    padding: 30px;
+}
+
+/* --- Map Placeholder --- */
+.map-placeholder {
+    width: 100%;
+    height: 400px;
+    background: #333;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--subtle-text);
+    border: 2px dashed var(--subtle-text);
+}
+
+/* --- List Styles (for Courses & Events) --- */
+.data-list {
+    list-style: none;
+    padding: 0;
+}
+
+.data-list-item {
+    background: linear-gradient(145deg, #2a2a4e, #1f1f3a);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--accent-color);
+}
+
+.data-list-item h4 {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.data-list-item p {
+    font-size: 1rem;
+    color: var(--subtle-text);
+    margin: 0;
+}
+
+/* --- Emergency Buttons --- */
+.emergency-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.emergency-button {
+    display: block;
+    padding: 40px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    transition: transform 0.2s;
+}
+
+.emergency-button:hover {
+    transform: scale(1.02);
+}
+
+.emergency-call {
+    background: #c00; /* Critical: Red */
+    color: #fff;
+}
+
+.emergency-info {
+    background: #e0a800; /* Warning: Yellow/Orange */
+    color: #1a1a2e;
+}
